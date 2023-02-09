@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-width:300px;
+    --main-height:300px;
+  }
+
+.primer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    width: 1050px;
+    height: auto;
+    
+}
+
+.radius__box {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    border: 1px solid red;
+}
+
+.radius__heading {
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    text-align: center;
+}
+
+.wrapper__box_radius {
+    width: 410px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+.form__radius input {
+    width: 55px;
+    height: 25px;
+    position: absolute;
+}
+
+#form__input_one {
+    top:0;
+    left:0;
+}
+
+#form__input_two {
+    top:0;
+    right:0;
+}
+
+#form__input_three {
+    bottom:0;
+    right: 0;
+}
+
+#form__input_four{
+    bottom:0;
+    left: 0;
+}
+
+.radius {
+    width: var(--main-width);
+    height: var(--main-height);
+    max-width: 300px;
+    max-height: 300px;
+    background-color: rgb(57, 90, 238);
+}
+
+/* Размер блока*/
+.wrapper__box_size {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.radius__heading-size {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form__size {
+    margin-top: 5px;
+}
+
+#radius__box_one, #radius__box_two {
+    width: 55px;
+    height: 25px;
+}
+
+/*поле вывода кода*/
+
+.radius__code {
+    width: 500px;
+    height: 500px;
+    border: 1px solid red;
+}
+
+.form__radius_code {
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+
+.form__text-1 {
+    width: 450px;
+    height: 180px;
+}
+
+.form__text-2 {
+    width: 450px;
+    height: 180px;
+}
+
+.form__title {
+    margin: 10px 0;
+}
+
+.form__radius_code button {
+    margin-top: 5px;
+}

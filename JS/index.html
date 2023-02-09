@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS</title>
+</head>
+<body>
+    <section class="primer">
+    <div class="radius__box">
+        <p class="radius__heading">Меняем радиус элемента</p>
+
+        <div class="wrapper__box_size">
+            <p class="radius__heading-size">Введи размеры блока (max значение - 300)</p>
+            <form class="form__size">
+                <input type="number" id="radius__box_one" step="1" min="0" max="300" placeholder="выс." required>
+                <span>х</span>
+                <input type="number" id="radius__box_two" step="1" min="0" max="300" placeholder="шир." required>
+            </form>
+        </div>
+        <div class="wrapper__box_radius">
+                <form class="form__radius" onsubmit ="return false">
+                    <input id="form__input_one" type="number" step="1" min="0" max="300" placeholder="рад." required>
+                    <input id="form__input_two" type="number" step="1" min="0" max="300" placeholder="рад." required>
+                    <input id="form__input_three" type="number" step="1" min="0" max="300" placeholder="рад." required>
+                    <input id="form__input_four" type="number" step="1" min="0" max="300" placeholder="рад." required>
+                </form>
+            <div class="radius"></div>
+        </div>
+    </div>
+
+    <div class="radius__code">
+        <form class="form__radius_code">
+                <p class="form__title">Код HTML</p>
+                <textarea id="ident" class="form__text-1">Текст кода html</textarea>
+                <button type="button" onclick="textElementOne()">Получить код html</button>
+                <p class="form__title">Код CSS</p>
+                <textarea id="ident2" class="form__text-2">Текст кода css</textarea>
+                <button type="button" onclick="textElementTwo()">Получить код css</button>
+        </form>
+    </div>
+    </section>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
