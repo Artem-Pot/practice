@@ -13,19 +13,21 @@
         <p class="radius__heading">Меняем радиус элемента</p>
 
         <div class="wrapper__box_size">
-            <p class="radius__heading-size">Введи размеры блока (max значение - 300)</p>
+            <p class="radius__heading-size">Введи размеры (max 300) и цвет элемента</p>
             <form class="form__size">
-                <input type="number" id="radius__box_one" step="1" min="0" max="300" placeholder="выс." required>
+                <input type="number" id="radius__box_one" step="1" min="0" max="300" placeholder="выс." value='300' required>
                 <span>х</span>
-                <input type="number" id="radius__box_two" step="1" min="0" max="300" placeholder="шир." required>
+                <input type="number" id="radius__box_two" step="1" min="0" max="300" placeholder="шир." value='300' required>
+                <span>Выбрать цвет:</span>
+                <input type="color" id="radius__box_colour" value="#000000">
             </form>
         </div>
         <div class="wrapper__box_radius">
                 <form class="form__radius" onsubmit ="return false">
-                    <input id="form__input_one" type="number" step="1" min="0" max="300" placeholder="рад." required>
-                    <input id="form__input_two" type="number" step="1" min="0" max="300" placeholder="рад." required>
-                    <input id="form__input_three" type="number" step="1" min="0" max="300" placeholder="рад." required>
-                    <input id="form__input_four" type="number" step="1" min="0" max="300" placeholder="рад." required>
+                    <input id="form__input_one" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
+                    <input id="form__input_two" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
+                    <input id="form__input_three" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
+                    <input id="form__input_four" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
                 </form>
             <div class="radius"></div>
         </div>
