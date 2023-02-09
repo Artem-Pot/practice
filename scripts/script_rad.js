@@ -77,7 +77,7 @@ inputSize2.oninput = function() {
   if (radius__box_two.value > radSize) {
     radAlert();
     document.querySelector('.radius').style.height = ('300px');
-   document.getElementById("radius__box_two").value = radSize;
+    document.getElementById("radius__box_two").value = radSize;
     }
   else {
     root.style.setProperty('--main-height', radius__box_two.value + 'px');
@@ -90,7 +90,18 @@ const boxColor = document.getElementById('radius__box_colour');
 
 boxColor.oninput = function() {
   document.querySelector('.radius').style.backgroundColor = radius__box_colour.value;
+  
  };
+
+// вставка изображения в блок
+
+  document.getElementById('radius__box_img').onchange = function() {  
+  const url = URL.createObjectURL(this.files[0]);
+  document.querySelector('.radius').style.backgroundImage = "url(" + url + ")";
+  document.querySelector('.radius').style.backgroundRepeat = "no-repeat";
+  document.querySelector('.radius').style.backgroundPosition = "center";
+  document.querySelector('.radius').style.backgroundSize = "contain"; // сделать выбор между  cover и contain с помощью чек бокса
+}
 
 // окно с показом кода
 const textElement = document.querySelector('.radius'); // присваиваем переменную класса блока
@@ -106,7 +117,11 @@ function textElementTwo() { // функция поиска кода css
   + 'height: ' + style.height + ';' +'\n'
   + 'border: ' + style.borderTopLeftRadius + ' ' + style.borderTopRightRadius + ' '  
   + style.borderBottomLeftRadius + ' '  + style.borderBottomRightRadius + ';' +'\n'
-  + 'background-color: ' + style.backgroundColor + ';'; // показываем код в окне кода СSS
+  + 'background-color: ' + style.backgroundColor + ';' + '\n'
+  + 'background-image: ' + style.backgroundImage + ';' + '\n'
+  + 'background-repeat: ' + style.backgroundRepeat + ';' + '\n'
+  + 'background-position: ' + style.backgroundPosition + ';' + '\n' 
+  + 'background-size: ' + style.backgroundSize + ';'; // показываем код в окне кода СSS
 }
 
- //Добавить кнопку сбросить всё.
+ //Добавить кнопку сбросить всё, добавить ветвление если после изображения захотелось добавить цвет, но он не сработает.
