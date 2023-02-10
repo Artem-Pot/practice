@@ -10,28 +10,49 @@
 <body>
     <section class="primer">
     <div class="radius__box">
-        <p class="radius__heading">Меняем радиус элемента</p>
-
+        <p class="radius__heading">Радус, цвет и форма</p>
+        
         <div class="wrapper__box_size">
-            <p class="radius__heading-size">Введи размеры (max 300) и цвет элемента</p>
+           
             <form class="form__size">
-                <input type="number" id="radius__box_one" step="1" min="0" max="300" placeholder="выс." value='300' required>
-                <span>х</span>
-                <input type="number" id="radius__box_two" step="1" min="0" max="300" placeholder="шир." value='300' required>
-                <span>Выбрать цвет:</span>
-                <input type="color" id="radius__box_colour" value="#000000">
-                <span>Вставить изображение</span>
-                <input name="myFile" type="file" id="radius__box_img">
+                <div class="wrapper_size">
+                    <div class="wrapper__box-center">
+                        <span>Размеры блока (max 300): </span>
+                        <input type="number" id="radius__box_one" step="1" min="0" max="300" placeholder="выс." value='300' required>
+                        <span> х </span>
+                        <input type="number" id="radius__box_two" step="1" min="0" max="300" placeholder="шир." value='300' required>
+                    </div>
+    
+                    <div class="wrapper__box-center">
+                        <span>Выбрать цвет или вставить изображение, в качестве фона: </span>
+                        <input type="color" id="radius__box_colour" value="#ff0000">
+                    </div>
+    
+                    <div class="wrapper__box-center"> 
+                        <span>Вставить изображение: </span>
+                        <input name="myFile" type="file" id="radius__box_img">
+                    </div>
+                </div>
+
+            <div class="wrapper__box_radi">
+                <div class="wrapper__box_radius">
+                    <div class="form__radius">
+                        <input id="form__input_one" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
+                        <input id="form__input_two" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
+                        <input id="form__input_three" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
+                        <input id="form__input_four" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
+                    </div>
+                    <div class="radius"></div>
+                </div>
+                <div class="wrapper__input_range">
+                    <input id="form__input_rangeW" type="range" min="0" max="300" value="300" step="5"><span id="span__range_w">300</span>
+                    <input id="form__input_rangeH" type="range" min="0" max="300" value="300" step="5"><span id="span__range_h">300</span>
+                </div>
+                
+                <button class="button__submit" type="submit">Сбросить все настройки</button>
+            </div>
+                
             </form>
-        </div>
-        <div class="wrapper__box_radius">
-                <form class="form__radius" onsubmit ="return false">
-                    <input id="form__input_one" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
-                    <input id="form__input_two" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
-                    <input id="form__input_three" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
-                    <input id="form__input_four" type="number" step="1" min="0" max="300" placeholder="рад." value='0' required>
-                </form>
-            <div class="radius"></div>
         </div>
     </div>
 

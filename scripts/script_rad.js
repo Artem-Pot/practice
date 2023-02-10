@@ -1,111 +1,150 @@
-// изменение радиуса 
+// поле ввоода для радиуса
 const inputOne = document.getElementById('form__input_one');
 const inputTwo = document.getElementById('form__input_two');
 const inputThree = document.getElementById('form__input_three');
 const inputFour = document.getElementById('form__input_four');
-
+// прочее
 const radStyle = document.querySelector('.radius').style
 const radSize = 300;
+const root = document.querySelector(':root');
+//поле ввода для ручного ввода размера блока
+const inputSize1 = document.getElementById('radius__box_one');
+const inputSize2 = document.getElementById('radius__box_two');
+// загрузка изображения
+const inputImg = document.getElementById('radius__box_img');
+// цвет блока
+const boxColor = document.getElementById('radius__box_colour');
+// ползун
+const input_rangeW = document.getElementById('form__input_rangeW');
+const input_rangeH = document.getElementById('form__input_rangeH');
+const spanRangeW = document.getElementById('.span__range_w');
+const spanRangeH = document.getElementById('.span__range_h');
+//окна показа кода
+const textElement = document.querySelector('.radius'); // присваиваем переменную класса блока
+const textElementContent = textElement.outerHTML; // получаем все фрагменты кода включая потомков html
+
 
 function radAlert() {
   alert('введено значение больше ' + radSize);
 };
 
+
 form__input_one.oninput = function() {
-  if (form__input_one.value > radSize) {
+  if (this.value > radSize) {
     radAlert();
     radStyle.borderTopLeftRadius = ('300px');
-    document.getElementById("form__input_one").value = radSize;
+    this.value = radSize;
   }
   else {
-    radStyle.borderTopLeftRadius = (form__input_one.value + 'px');
+    radStyle.borderTopLeftRadius = (this.value + 'px');
   }
 };
 
 form__input_two.oninput = function() {
-  if (form__input_two.value > radSize) {
+  if (this.value > radSize) {
     radAlert();
     radStyle.borderTopRightRadius = ('300px');
-    document.getElementById("form__input_two").value = radSize;
+    this.value = radSize;
   }
   else {
-    radStyle.borderTopRightRadius = (form__input_two.value + 'px');
+    radStyle.borderTopRightRadius = (this.value + 'px');
   }
 };
 
 form__input_three.oninput = function() {
-  if (form__input_three.value > radSize) {
+  if (this.value > radSize) {
     radAlert();
     radStyle.borderBottomRightRadius = ('300px');
-    document.getElementById("form__input_three").value = radSize;
+    this.value = radSize;
   }
   else {
-    radStyle.borderBottomRightRadius = (form__input_three.value + 'px');
+    radStyle.borderBottomRightRadius = (this.value + 'px');
   }
 };
 
 form__input_four.oninput = function() {
-  if (form__input_four.value > radSize) {
+  if (this.value > radSize) {
     radAlert();
     radStyle.borderBottomLeftRadius = ('300px');
-    document.getElementById("form__input_four").value = radSize;
+    this.value = radSize;
   }
   else {
-    radStyle.borderBottomLeftRadius = (form__input_four.value + 'px');
+    radStyle.borderBottomLeftRadius = (this.value + 'px');
   }
 };
 
 // изменение размера блока с помощью ввода значений с клавиатуры
 
-const root = document.querySelector(':root');
-const inputSize1 = document.getElementById('radius__box_one');
-const inputSize2 = document.getElementById('radius__box_two');
-
 inputSize1.oninput = function() {
- if (radius__box_one.value > radSize) {
+ if (this.value > radSize) {
   radAlert();
-    document.querySelector('.radius').style.width = ('300px');
-    document.getElementById("radius__box_one").value = radSize;
+  radStyle.width = ('300px');
+  this.value = radSize;
   }
   else {
-    root.style.setProperty('--main-width', radius__box_one.value + 'px');
-    document.querySelector('.radius').style.width = (radius__box_one.value + 'px');
+    root.style.setProperty('--main-width', this.value + 'px');
+    radStyle.width = (this.value + 'px');
   }
 };
 
 inputSize2.oninput = function() {
-  if (radius__box_two.value > radSize) {
+  if (this.value > radSize) {
     radAlert();
-    document.querySelector('.radius').style.height = ('300px');
-    document.getElementById("radius__box_two").value = radSize;
+    radStyle.height = ('300px');
+    this.value = radSize;
     }
   else {
-    root.style.setProperty('--main-height', radius__box_two.value + 'px');
-    document.querySelector('.radius').style.height = (radius__box_two.value + 'px');
+    root.style.setProperty('--main-height', this.value + 'px');
+    radStyle.height = (this.value + 'px');
+    
   }
- };
-
-// изменение цвета блока
-const boxColor = document.getElementById('radius__box_colour');
-
-boxColor.oninput = function() {
-  document.querySelector('.radius').style.backgroundColor = radius__box_colour.value;
-  
  };
 
 // вставка изображения в блок
 
-  document.getElementById('radius__box_img').onchange = function() {  
-  const url = URL.createObjectURL(this.files[0]);
-  document.querySelector('.radius').style.backgroundImage = "url(" + url + ")";
-  document.querySelector('.radius').style.backgroundRepeat = "no-repeat";
-  document.querySelector('.radius').style.backgroundPosition = "center";
-  document.querySelector('.radius').style.backgroundSize = "contain"; // сделать выбор между  cover и contain с помощью чек бокса
+inputImg.oninput = function() {                        // сделать выбор между  cover и contain с помощью чек бокса
+  let url = URL.createObjectURL(this.files[0]);
+  radStyle.backgroundImage = "url(" + url + ")";
+  radStyle.backgroundRepeat = "no-repeat";
+  radStyle.backgroundPosition = "center";
+  radStyle.backgroundSize = "cover";  
 }
 
-// окно с показом кода
-const textElement = document.querySelector('.radius'); // присваиваем переменную класса блока
-const textElementContent = textElement.outerHTML; // получаем все фрагменты кода включая потомков html
+// изменение цвета блока
+
+boxColor.oninput = function() {
+   if (radStyle.backgroundImage = true) {
+     inputImg.value = '';
+     radStyle.backgroundImage = "url(" + ")";
+     radStyle.backgroundColor = this.value;
+   }
+   else {
+    inputImg .value = '';
+    radStyle.backgroundColor = this.value;
+   }
+ };
+
+// изменение размера с помощью ползунка
+
+function test() {
+  
+};
+
+
+input_rangeW.oninput = function() {
+    root.style.setProperty('--main-width', this.value + 'px');
+    radStyle.width = (this.value + 'px');
+    span__range_w.textContent = this.value;
+    test();
+ };
+
+ input_rangeH.oninput = function() {
+    root.style.setProperty('--main-height', this.value + 'px');
+    radStyle.height = (this.value + 'px');
+    span__range_h.textContent = this.value; 
+};
+
+// окно показа кода html и css
 
 function textElementOne() { // функция поиска кода html
   document.getElementById("ident").value = textElementContent; // показываем код в окне кода HTML
@@ -113,15 +152,26 @@ function textElementOne() { // функция поиска кода html
 
 function textElementTwo() { // функция поиска кода css
   const style = getComputedStyle(textElement);
-  document.getElementById("ident2").value = 'width: ' + style.width + ';' +'\n' 
-  + 'height: ' + style.height + ';' +'\n'
-  + 'border: ' + style.borderTopLeftRadius + ' ' + style.borderTopRightRadius + ' '  
-  + style.borderBottomLeftRadius + ' '  + style.borderBottomRightRadius + ';' +'\n'
-  + 'background-color: ' + style.backgroundColor + ';' + '\n'
-  + 'background-image: ' + style.backgroundImage + ';' + '\n'
-  + 'background-repeat: ' + style.backgroundRepeat + ';' + '\n'
-  + 'background-position: ' + style.backgroundPosition + ';' + '\n' 
-  + 'background-size: ' + style.backgroundSize + ';'; // показываем код в окне кода СSS
+  if (radStyle.backgroundImage) { // если в блоке загружено изображение будет показан данный код стиля
+    document.getElementById("ident2").value = 'width: ' + style.width + ';' +'\n' 
+    + 'height: ' + style.height + ';' +'\n'
+    + 'border: ' + style.borderTopLeftRadius + ' ' + style.borderTopRightRadius + ' '  
+    + style.borderBottomLeftRadius + ' '  + style.borderBottomRightRadius + ';' +'\n'
+    + 'background-color: ' + style.backgroundColor + ';' + '\n'
+    + 'background-image: ' + "url()" + ';' + " /*" + " - указать путь к файлу внутри скобок " + "*/" +'\n'
+    + 'background-repeat: ' + style.backgroundRepeat + ';' + '\n'
+    + 'background-position: ' + style.backgroundPosition + ';' + '\n' 
+    + 'background-size: ' + style.backgroundSize + ';'; // показываем код в окне кода СSS
+  }
+
+  else { // в противном случае покажется код без учета изображения
+    document.getElementById("ident2").value = 'width: ' + style.width + ';' +'\n' 
+    + 'height: ' + style.height + ';' +'\n'
+    + 'border: ' + style.borderTopLeftRadius + ' ' + style.borderTopRightRadius + ' '  
+    + style.borderBottomLeftRadius + ' '  + style.borderBottomRightRadius + ';' +'\n'
+    + 'background-color: ' + style.backgroundColor + ';' + '\n' ; // показываем код в окне кода СSS
+  }
 }
 
- //Добавить кнопку сбросить всё, добавить ветвление если после изображения захотелось добавить цвет, но он не сработает.
+ //сделать чтобы размер блока был пропорционально размеру изображения при загрузке с возможностью менять пропорции изображения через радио кнопку
+ // поженить ползунки и ручной ввод размера
