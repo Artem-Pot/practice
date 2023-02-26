@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 400px;
+    height: 460px;
+    background-color: rgb(238, 234, 229);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(216, 208, 208);
+}
+
+.box__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.message__output{
+    width: 380px;
+    height: 340px;
+    margin-top: 10px;
+    border-bottom: 1px solid rgb(177, 175, 175);
+}
+
+.message__bot {
+    margin: 5px 40px 5px 5px;
+    background-color: rgb(12, 236, 42);
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.message__users {
+    margin: 5px 5px 5px 40px;
+    background-color: rgb(247, 205, 117);
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    
+}
+
+.form {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+#message__input {
+    width: 380px;
+    height: 60px;
+    outline: none;
+    border: none;
+    resize: none;
+    
+}
+
+#button__input {
+    margin-top: 7px;
+    width: 150px;
+    height: 28px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(174, 197, 248);
+    font-weight: 700;
+}
+
+#button__input:hover {
+    cursor: pointer;
+}
