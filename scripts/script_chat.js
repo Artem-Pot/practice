@@ -29,10 +29,17 @@ setTimeout(() => { imgOneBot(); }, 2000);
 function textInput() {                                   
     const userMessage = document.getElementById('message__input').value; // поиск текста в форме сообщения пользователя
     const div = document.createElement('div'); // создание нового diva
+    if (userMessage === '') {
+        alert('Вы ни чего не ввели!');
+        return;
+    }
 
+    else {
+        div.innerHTML = userMessage; // вывод сообщения пользователя
+    }
     div.className = "message__users"; // присвоение новому элементу класс message__users
     Message.append(div); // добавить блок с сообщениеем - последним
-    div.innerHTML = userMessage; // вывод сообщения пользователя
+    
     setTimeout(() => {  textBot(); }, 1000); // функция задержки вывода сообщения бота мсек
 }
 // ---------------------сообщения бота-------------------------------------
@@ -47,15 +54,47 @@ function getRandomIntInclusive(min, max) {
 function textBot() {  
     const div = document.createElement('div'); // создание нового diva
     const userMessage = document.getElementById('message__input').value; // поиск текста в форме сообщения пользователя
-    const letterСase = userMessage.trim().toLowerCase(); // перевод сообщения в нижний регистр для исключения задваивания условий с верхним и нижним регистром и удаление лишних пробелов с обоих концов
+    let letterСase = userMessage.trim().toLowerCase(); // перевод сообщения в нижний регистр для исключения задваивания условий с верхним и нижним регистром и удаление лишних пробелов с обоих концов
     const block = document.getElementById("placehere"); // прокрутка сообщения в блоке сообщений
 
-    if (ObText[letterСase]) {
-        div.innerHTML = ObText[letterСase]; // поиск сообщения пользователя в объекте и если совпадение то вывод сообщения
-    } 
-    else {
-        div.innerHTML = botMessagesArr[getRandomIntInclusive()]; // рандомная функция, равная не больше длины объекта
+    if (letterСase.endsWith('?') || 
+    letterСase.endsWith('!') || 
+    letterСase.endsWith('.') || 
+    letterСase.endsWith(',') || 
+    letterСase.endsWith('"') || 
+    letterСase.endsWith('/') || 
+    letterСase.endsWith('\\') ||
+    letterСase.endsWith('@') ||
+    letterСase.endsWith('^') ||
+    letterСase.endsWith('$') ||
+    letterСase.endsWith('`') ||
+    letterСase.endsWith('*') ||
+    letterСase.endsWith('(') ||
+    letterСase.endsWith(')') ||
+    letterСase.endsWith('+') ||
+    letterСase.endsWith('-') ||
+    letterСase.endsWith('|') ||
+    letterСase.endsWith('[') ||
+    letterСase.endsWith(']') ||
+    letterСase.endsWith('}') ||
+    letterСase.endsWith('{') ||
+    letterСase.endsWith('<') ||
+    letterСase.endsWith('>') ||
+    letterСase.endsWith(':') ||
+    letterСase.endsWith(';'))  {                        //если в строке в конце есть какие ли бо символы то 
+        letterСase = letterСase.slice(0, -1);          // исключаем последний символ строки?
+        div.innerHTML = ObText[letterСase];                //рандомная функция, равная не больше длины объекта
     }
+
+    else {
+        if (ObText[letterСase]) {
+            div.innerHTML = ObText[letterСase];             // поиск сообщения пользователя в объекте и если совпадение то вывод сообщения
+        } 
+        else {
+            div.innerHTML = botMessagesArr[getRandomIntInclusive()]; // рандомная функция, равная не больше длины объекта
+        }
+    }
+
 
     div.className = "message__bot"; // присвоение новому элементу класс message__bot
     Message.append(div); // добавить блок с сообщениеем - последним
@@ -65,4 +104,4 @@ function textBot() {
 
 
 //сделать, что бы отправка сообщения была при нажатии на кнопку и клавишей энтер
-// добавить, чтобы можно было убирать знаки ! ? : , с помощью команды исключения
+// сократить код перебора символов в коцне строки 
