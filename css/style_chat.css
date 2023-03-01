@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+}
+
 .box {
     margin-top: 20px;
     margin-left: 20px;
@@ -91,3 +95,42 @@
     background-color: blueviolet;
     display: inline-block;
 }
+
+/* блок с описанием  */
+.description {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 600px;
+    height: 560px;
+    background-color: rgb(238, 234, 229);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(216, 208, 208);
+}
+
+.box__wrapper {
+    margin: 20px;
+    
+}
+
+.description__heading-h4 {
+    margin-top: 10px;
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-weight:bold
+}
+
+.text {
+    padding: 5px;
+    
+}
+
+.description__list {
+    list-style:none;
+}
+
+.description__item {
+    margin-top: 10px;
+}
+
