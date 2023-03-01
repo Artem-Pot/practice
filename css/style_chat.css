@@ -45,6 +45,7 @@ body {
     outline: none;
     border: none;
     box-shadow: 1px 1px 5px rgb(62, 150, 4);
+    word-break:break-all;
 }
 
 .message__users {
