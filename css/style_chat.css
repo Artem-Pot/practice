@@ -56,6 +56,18 @@ body {
     outline: none;
     border: none;
     box-shadow: 1px 1px 5px rgb(161, 146, 5);
+    word-break:break-all;
+}
+
+.message__systym {
+    margin: 5px 5px 5px 5px;
+    background-color: rgb(228, 217, 194);
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(192, 189, 161);
+    word-break:break-all;
 }
 
 .form {
