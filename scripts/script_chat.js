@@ -131,11 +131,28 @@ function textBot() {
     //     div.innerHTML = ObText[letterСase][getRandomBotObj()];               
     // } 
  
-     if (letterСase) {                                                                  // поиск ответа в массиве на вопрос пользователя 'поиск части из всего предложения'
-        const messageParts = letterСase.split(" ");                        // разделяет предложения на массив с разделителем - пробел.
-        console.log(messageParts);
-         for (let i = 0; messageParts.length > i ; i++) {                 //цикл перебора всех слов нового массива, созданного из разбитого предложения пользователя
-            console.log(messageParts[i]);
+
+
+    // не рпвильно делал, т.к. нужно перебрать каждое слово созданного массива в общем массиве
+     if (letterСase) { //+
+        console.log('нашел в инпуте: ' + letterСase);   //+                                                            // поиск ответа в массиве на вопрос пользователя 'поиск части из всего предложения'
+        let messageParts = letterСase.split(" ");  // разделяет предложения на массив с разделителем - пробел.
+        console.log('нашел в массив: ' + messageParts); //+
+         for (let i = 0; messageParts.length > i ; i++) {    //+             //цикл перебора всех слов нового массива, созданного из разбитого предложения пользователя
+            console.log(messageParts[i]); // +
+            console.log(i); // +
+                if (ObText[letterСase] === messageParts[i]) { // искать сдесь косяк т.к. не доходит до сюда, править левое занчение
+                    console.log('нашёл');
+                    
+                }
+
+                else {
+                    console.log('не нашёл');
+                    // сделать метку break : который прыгнет из цикла и покажет рандом
+                }
+                messageParts = messageParts[i] + i; // сдесь косяк т.к. добовляет букву а не счетчик
+                console.log('добавил + 1'); 
+            
          }
         
     }    
