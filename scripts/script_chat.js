@@ -16,7 +16,6 @@ userMessage.addEventListener("keypress", function(event) {
   }
 });
 
-
 //функция рандома для первого сообщений бота
 function getRandomIntInclusiveOne(min, max) {
     min = Math.ceil(0);
@@ -53,14 +52,12 @@ function textOneBot() {
     div.innerHTML = botOneMessagesArr[getRandomIntInclusiveOne()];             // создание первого рамдомного сообщения ботом
 }
 
-
 // рандомное изображение бота после первого сообщения
 // function imgOneBot() { 
 //     const div = document.createElement('div'); 
 //     div.className = "message__bot";
 //     Message.append(div);
 //     div.innerHTML = botOneimgArr[getRandomIntInclusiveImg()];
-    
 // }
 
 setTimeout(() => { textOneBot(); }, 1000);   //вызов функции первого сообшения ботом через время после загрузки страницы
@@ -77,7 +74,7 @@ function textInput() {
     }
 
     else if (userMessage === '!список') {
-        div.innerHTML = 'Список команд чат бота:' + '<br>' + '!список - покажет все доступные команды бота'+ '<br>' + '!фраза - покажет все доступные фразы, на которые бот ответит' + '<br>' + '!стикер - покажет все доступные стикеры' + '<br>' + '!анекдот - покажет рандомный анекдот';
+        div.innerHTML = 'Список команд чат бота:' + '<br>' + '!список - покажет все доступные команды бота'+ '<br>' + '!фраза - покажет все доступные фразы, на которые бот ответит' + '<br>' + '!стикер - покажет все доступные стикеры';
         div.className = "message__systym"; // присвоение новому элементу класс с системным сообщением
         document.getElementById('message__input').value = ''; // очистка блока сообщений
     }
@@ -90,12 +87,6 @@ function textInput() {
 
     else if (userMessage === '!стикер') {
         div.innerHTML = botOneimgArr; // выводит все стикеры
-        div.className = "message__systym"; // присвоение новому элементу класс с системным сообщением
-        document.getElementById('message__input').value = ''; // очистка блока сообщений
-    }
-
-    else if (userMessage === '!анекдот') {
-        div.innerHTML = 'Функция !анекдот - в разработке'; // выводит рандомный анекдот
         div.className = "message__systym"; // присвоение новому элементу класс с системным сообщением
         document.getElementById('message__input').value = ''; // очистка блока сообщений
     }
@@ -126,39 +117,13 @@ function textBot() {
     const userMessage = document.getElementById('message__input').value; // поиск текста в форме сообщения пользователя
     let letterСase = userMessage.trim().toLowerCase().replace(/[^а-яА-Яa-zA-Z ]/g, ""); // фильтр переводит сообщение в нижний регистр, исключает пробелы впередли и сзади, исключение всех символов кроме букв алфавита.
     const block = document.getElementById("placehere"); // прокрутка сообщения в блоке сообщений
-
-    // if (ObText[letterСase]) {                                                                       // поиск ответа в массиве на вопрос пользователя 'точная фраза'
-    //     div.innerHTML = ObText[letterСase][getRandomBotObj()];               
-    // } 
  
-
-
-    // не рпвильно делал, т.к. нужно перебрать каждое слово созданного массива в общем массиве
-     if (letterСase) { //+
-        console.log('нашел в инпуте: ' + letterСase);   //+                                                            // поиск ответа в массиве на вопрос пользователя 'поиск части из всего предложения'
-        let messageParts = letterСase.split(" ");  // разделяет предложения на массив с разделителем - пробел.
-        console.log('нашел в массив: ' + messageParts); //+
-         for (let i = 0; messageParts.length > i ; i++) {    //+             //цикл перебора всех слов нового массива, созданного из разбитого предложения пользователя
-            console.log(messageParts[i]); // +
-            console.log(i); // +
-                if (ObText[letterСase] === messageParts[i]) { // искать сдесь косяк т.к. не доходит до сюда, править левое занчение
-                    console.log('нашёл');
-                    
-                }
-
-                else {
-                    console.log('не нашёл');
-                    // сделать метку break : который прыгнет из цикла и покажет рандом
-                }
-                messageParts = messageParts[i] + i; // сдесь косяк т.к. добовляет букву а не счетчик
-                console.log('добавил + 1'); 
-            
-         }
-        
-    }    
-
+     if (ObText[letterСase]) {                                                                       // поиск ответа в массиве на вопрос пользователя 'точная фраза'
+         div.innerHTML = ObText[letterСase][getRandomBotObj()];               
+     } 
+ 
     else  {
- //       div.innerHTML = botMessagesArr[getRandomIntInclusive()];            // рандомная выдача ответа для пользователя, в случае если не нашёл совпадения
+        div.innerHTML = botMessagesArr[getRandomIntInclusive()];            // рандомная выдача ответа для пользователя, в случае если не нашёл совпадения
         console.log('ушёл в рандом');
     }
 
@@ -168,8 +133,7 @@ function textBot() {
     document.getElementById('message__input').value = ''; // очистка поля ввода от текста после отправки сообщения пользователем (работает не так как нужно т.к. когда она стояла в функции вывода сообщения пользователя она стила сообщение и я не мог взять от туда данные), не работает если просто указать переменную userMessage, поэтому пришлось искать элемент заново   
 }
 
-// добавить функцию поиска не только по точной фразе и но части предложения, чтоб увеличить словарный запас
 //добавить сценарий в виде ветвления.
-//добавить !функцию викторина и анекдот / https://www.anekdot.ru/static/webmaster.html
 // добавить функцию самообучения бота - добавить команду !команда, котое будет вызывать алерт в который добавить фразу и ответ к ней. 
 //Далее добавить, чтобы лог записывался и добавлялся в массив с новыми фразами, скорей всего не обойтись без сервера иначе после каждого обновления станицы всё будет пропадать. (node js и msql) или добавить куки для сохранения данных при перезагрузки страницы
+// добавить функцию поиска не только по точной фразе и но части предложения, чтоб увеличить словарный запас
