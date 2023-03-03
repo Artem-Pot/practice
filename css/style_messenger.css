@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1em;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.side-panel {
+    width: 100%;
+    max-width: 364px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    border-right: 1px solid #D9DCE0;
+}
+
+.settings {
+    width: 100%;
+    background-color: chartreuse;
+}
+
+.settings__wrapper {
+    padding: 8px 16px;
+    display: flex;
+}
+
+.settings__menu {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: coral;
+    margin-right: 16px;
+}
+
+.settings__search {
+    
+}
+
+.settings__form {
+    position: relative;
+    width: 276px;
+    height: 40px;
+    border-radius: 22px;
+    background: #F5F5F5;
+
+}
+
+#settings__input {
+    font-size: 16px;
+    line-height: 20px;
+    background: #F5F5F5;
+ 
+    outline: none;
+    border: none;
+    position: absolute;
+    left: 56px;
+    top:10px;
+    color: #707991;
+    font-weight: 400;
+}
+
+#settings__button {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    outline: none;
+    border: none;
+    left: 16px;
+    top:8px
+}
+
+.text {
+
+}
+
+.contacts {
+
+}
+
+.contacts__wrapper {
+
+}
+
+.contacts__user {
+
+}
+
+.contacts__ico {
+
+}
+.contacts__box {
+
+}
+
+.contacts__name {
+
+}
+
+.contacts__nick {
+
+}
+
+.contacts__time {
+
+}
+
+.contacts__mess {
+
+}
+
+.contacts__messages {
+
+}
+
+.contacts__unread {
+
+}
+
+/* Блок с сообщениями*/
+
+.main {
+    background-color: rgb(72, 23, 206);
+    width: 100%;
+    height: 100vh;
+}

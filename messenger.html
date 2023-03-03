@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_messenger.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Мессенджер с ботом</title>
+</head>
+<body>
+    <section class="side-panel">
+            <div class="settings">
+                <div class="settings__wrapper">
+                    <div class="settings__menu"></div>
+                    <div class="settings__search">
+                        <form class="settings__form">
+                            <input class="text" id="settings__input" placeholder="Поиск">
+                            <button id="settings__button"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacts">
+                <div class="contacts__wrapper">
+                    <div class="contacts__user">
+                        <div class="contacts__ico"></div>
+                        <div class="contacts__box">
+                            <div class="contacts__name">
+                                <div class="contacts__nick"></div>
+                                <div class="contacts__time"></div>
+                            </div>
+
+                            <div class="contacts__mess">
+                                <div class="contacts__messages"></div>
+                                <div class="contacts__unread"></div>                       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="main">
+
+    </section>
+
+        
+    <script type="module" src="scripts/script_messenger.js"></script>
+</body>
+</html>
