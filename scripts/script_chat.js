@@ -101,15 +101,6 @@ function textInput() {
     block.scrollTop = block.scrollHeight; // прокрутка блока до самого низа
 }
 
-function test() {  
-    const div = document.createElement('div'); // создание нового diva
-    const block = document.getElementById("placehere"); // прокрутка сообщения в блоке сообщений
-    div.innerHTML = botOneimgArr; // выводит все стикеры
-    div.className = "message__systym"; // присвоение новому элементу класс с системным сообщением
-    document.getElementById('message__input').value = ''; // очистка блока сообщений
-    Message.append(div); // добавить блок с сообщениеем - последним
-    block.scrollTop = block.scrollHeight; // прокрутка блока до самого низа
-}
 // ---------------------сообщения бота-------------------------------------
 
 function textBot() {  
@@ -124,7 +115,6 @@ function textBot() {
  
     else  {
         div.innerHTML = botMessagesArr[getRandomIntInclusive()];            // рандомная выдача ответа для пользователя, в случае если не нашёл совпадения
-        console.log('ушёл в рандом');
     }
 
     div.className = "message__bot"; // присвоение новому элементу класс message__bot
