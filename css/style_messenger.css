@@ -5,10 +5,16 @@
 }
 
 :root {
-  --bg-color: #fff;
-  --text-colo: #011627;
-  --text-color-online: #06adfa;
-  --border-color:#D9DCE0;
+    --bg-color: #fff;
+    --bg-colorInput: #F5F5F5;
+    --bg-colorMes: #fff;
+    --text-color: #011627;
+    --text-colorUser:#707991;
+    --text-colorHover: #F5F5F5;
+    --text-color-online: #06adfa;
+    --border-color:#D9DCE0;
+    --text-color-unread:#011627;
+    --bg-images-back: url(../img/messenger/background-5.jpg);
 }
 
 body {
@@ -30,13 +36,13 @@ img {
     width: 100%;
     max-width: 364px;
     height: 100vh;
-    background-color: #FFFFFF;
-    border-right: 1px solid #D9DCE0;
+    background-color: var(--bg-color);
+    border-right: 1px solid var(--border-color);
 }
 
 .settings {
     width: 100%;
-    height: 56px;
+    height: 55px;
 }
 
 .settings__wrapper {
@@ -56,7 +62,7 @@ img {
 .button {
     outline: none;
     border: none;
-    background-color: #FFFFFF;
+    background-color: var(--bg-color);
 }
 
 .button:hover {
@@ -66,7 +72,7 @@ img {
 .settings__search {
     width: 276px;
     height: 40px;
-    background-color: #F5F5F5;
+    background-color: var(--bg-colorInput);
     border-radius: 22px;
 }
 
@@ -84,14 +90,14 @@ img {
     color: #707991;
     outline: none;
     border: none;
-    background-color: #F5F5F5;
+    background-color: var(--bg-colorInput);
     position: absolute;
     top: 10px;
     left: 56px;
 }
 
 .button_menu-search {
-    background-color: #F5F5F5;
+    background-color: var(--bg-colorInput);
     position: absolute;
     top: 10.5px;
     left: 18.5px;
@@ -111,11 +117,11 @@ img {
     width: 100%;
     height: 72px;
     padding: 12px 16px;
-    border-top: 1px solid #D9DCE0;
+    border-top: 1px solid var(--border-color);
 }
 
 .contacts__wrapper:hover {
-    background-color: #F5F5F5;
+    background-color: var(--text-colorHover);
     cursor: pointer;
 }
 
@@ -157,7 +163,7 @@ img {
 .contacts__span-nick {
     font-weight: 600;
     line-height: 20px;
-    color: #011627;
+    color: var(--text-color);
 }
 
 .contacts__time {
@@ -169,7 +175,7 @@ img {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: #707991;
+    color: var(--text-colorUser);
 }
 
 .contacts__mess {
@@ -191,7 +197,11 @@ img {
 .contacts__span-messages {
     font-size: 14px;
     line-height: 18px;
-    color: #707991;
+    color: var(--text-colorUser);
+}
+
+.contacts__span-unread {
+    color: var(--text-color-unread);
 }
 
 .contacts__unread {
@@ -221,7 +231,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #D9DCE0;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
 }
 
 .main__wrapper {
@@ -276,7 +287,7 @@ main {
 }
 
 .button_header {
-    background-color: #fff;
+    background-color: var(--bg-color);
     border: none;
     width: 40px;
     height: 40px;
@@ -290,7 +301,8 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: url(../img/messenger/background-5.jpg) center;
+    background: var(--bg-images-back);
+    background-position: center center;
     background-size:cover;
 }
 
@@ -313,9 +325,9 @@ main {
 }
 
 .main__correspondence::-webkit-scrollbar { /*Скрывает полосу прокрутки*/
-    background-color: #fff;    /* цвет прокрутки */
+    background-color: var(--bg-color);    /* цвет прокрутки */
     border-radius: 3px;       /* закругления плашки */
-    border: 1px solid #D9DCE0;
+    border: 1px solid var(--border-color);
     width: 10px;
 }  
 
@@ -329,7 +341,7 @@ main {
     padding: 4px 12px;
     max-width: 80%;
     width: auto;
-    background: #FFFFFF;
+    background-color: var(--bg-colorMes);
     border-radius: 12px;
     display: flex;
     align-self:flex-start;
@@ -344,7 +356,7 @@ main {
     padding: 4px 12px;
     max-width: 80%;
     width: auto;
-    background: #78E378;
+    background-color: #78E378;
     border-radius: 12px;
     display: flex;
     align-self:flex-end;
@@ -359,7 +371,7 @@ main {
     padding: 4px 12px;
     max-width: 100%;
     width: auto;
-    background: #bdc4bd;
+    background-color: #bdc4bd;
     border-radius: 12px;
     display: flex;   
     align-self:center;
@@ -372,7 +384,7 @@ main {
 .main__text {
     display: flex;
     line-height: 20px;
-    color: #011627;
+    color: var(--text-color);
 }
 
 .main__time-box {
@@ -385,7 +397,7 @@ main {
 .main__time {
     font-size: 12px;
     line-height: 16px;
-    color: #011627;
+    color: var(--text-color);
 }
 
 .main__read {
@@ -404,12 +416,11 @@ main {
 .main__form {
     width: 100%;
     height: 56px;
-    background: #FFFFFF;
-    border-top: 1px solid #D9DCE0;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
     padding: 8px 16px;
     display: flex;
     align-items: center;
-    border-right:  1px solid #D9DCE0;
 }
 
 .main__form-wrapper {
@@ -428,16 +439,18 @@ main {
 .main__input {
     width: 100%;
     line-height: 20px;
-    color: #707991;
+    color: var(--text-color);
     border: none;
     outline: none;
+    border-radius: 5px;
+    background-color: var(--bg-color);
 }
 /* Боковая панель с профилем*/
 .profile {
     width: 300px;
-    height: calc(100vh - 56px);
-    background-color: #FFFFFF;
-    border-left:  1px solid #D9DCE0;
+    height: 100vh;
+    background-color: var(--bg-color);
+    border-left:  1px solid var(--border-color);
 }
 
 .profile__wrapper {
@@ -453,7 +466,7 @@ main {
     height: 200px;
     border-radius: 10px;
     background-size:cover;
-    border: 1px solid #D9DCE0;
+    border: 1px solid var(--border-color);
 }
 
 .profile_box-info {
@@ -465,6 +478,7 @@ main {
 
 .profile__name {
     font-size: 16px;
+    color: var(--text-color);
 }
 
 .profile__time {
@@ -487,12 +501,13 @@ main {
     align-items: center;
     font-size: 14px;
     gap: 5px;
-    border-top: 1px solid #D9DCE0;
+    border-top: 1px solid var(--border-color)
 }
 
 .profile__text {
     font-weight:600;
     margin: 5px 0;
+    color: var(--text-color);
 }
 
 #profile__checkbox {
@@ -509,6 +524,7 @@ main {
 	font-size: 14px;
 	user-select: none;	
 }
+
 .checkbox-ios .checkbox-ios-switch {
 	position: relative;	
 	display: inline-block;
@@ -521,6 +537,7 @@ main {
 	background: #eee;
 	transition: .2s;
 }
+
 .checkbox-ios .checkbox-ios-switch:before {
 	content: '';
 	position: absolute;
@@ -530,10 +547,11 @@ main {
 	width: 14px;	
 	height: 14px;
 	border-radius: 50%;
-	background: white;
+	background-color: var(--bg-color);
 	box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 	transition: .15s;
 }
+
 .checkbox-ios input[type=checkbox] {
 	display: block;	
 	width: 0;
@@ -552,13 +570,13 @@ main {
 .checkbox-ios input[type=checkbox]:checked + .checkbox-ios-switch:before {
 	transform:translateX(15px);
 }
- 
+
 /* Hover */
 .checkbox-ios input[type="checkbox"]:not(:disabled) + .checkbox-ios-switch {
 	cursor: pointer;
 	border-color: rgba(0, 0, 0, .3);
 }
- 
+
 /* Disabled */
 .checkbox-ios input[type=checkbox]:disabled + .checkbox-ios-switch {
 	filter: grayscale(70%);
@@ -567,10 +585,9 @@ main {
 .checkbox-ios input[type=checkbox]:disabled + .checkbox-ios-switch:before {
 	background: #eee;
 }
- 
+
 /* Focus */
 .checkbox-ios.focused .checkbox-ios-switch:before {
 	box-shadow: inset 0px 0px 4px #ff5623;
 }
-
 /*-----конец Чек бокс переключатели------*/
