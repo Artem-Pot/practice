@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-    <title>Мессенджер с ботом</title>
+    <title>Мессенджер с чат ботом</title>
 </head>
 <body>
     <section class="side-panel">
@@ -88,14 +88,14 @@
             </div>
     </section>
 
-    <section class="main">
+    <main>
         <div class="main__header">
             <div class="main__wrapper">
                 <div class="main__box-info">
                     <div class="main__contacts-ico"></div>
                     <div class="main__contacts-name">
                         <div class="contacts__nick"><span class="contacts__span-nick">Бендер</span></div>
-                        <div class="main__user-status"><span class="main__user-status">Онлайн</span></div> 
+                        <div class="main__user-status"><span class="main__user-status">Online</span></div> 
                     </div>
                 </div>
 
@@ -123,7 +123,7 @@
         </div>
 
         <div class="main__messenges">
-            <div class="main__wrapper_messenges">
+            <div class="main__wrapper-messenges">
                     <div class="main__correspondence" id="placehere">
 <!-- Начало блока сообщений -->
                         <!-- <div class="main__mess"> 
@@ -141,7 +141,6 @@
                                 <div class="main__read main__read-no"></div> 
                             </div>
                         </div> -->
-
 <!-- Конец блока сообщений -->
                     </div>
                     
@@ -165,9 +164,49 @@
                     </form>
             </div>
         </div>
+    </main>
 
-    </section>
+    <!-- Боковая правая панель профиля собеседника-->
+    <div class="profile">
+        <div class="profile__wrapper">
+            <div class="profile__ico"></div>
+            <div class="profile_box-info">
+                <div class="profile__name">Бендер</div>
+                <div class="profile__time"><span class="main__user-status">Оnline</span></div>
+            </div>
+        </div>
+    
+        <div class="profile__settings">
+            <div class="profile__box-sett">
+                
+                <div class="profile__notifications">
+                    <span class="profile__text">вкл/откл уведомление</span>
+                    <label class="checkbox-ios">
+                        <input type="checkbox" id="profile__checkbox" checked>
+                        <span class="checkbox-ios-switch"></span>
+                    </label>
+                </div>
 
+                <div class="profile__notifications">
+                    <span class="profile__text">вкл/откл звук</span>
+                    <label class="checkbox-ios">
+                        <input type="checkbox" id="profile__checkbox">
+                        <span class="checkbox-ios-switch"></span>
+                    </label>
+                </div>
+
+                <div class="profile__notifications">
+                    <span class="profile__text">Светлая/тёмная тема</span>
+                    <label class="checkbox-ios">
+                        <input type="checkbox" id="profile__checkbox">
+                        <span class="checkbox-ios-switch"></span>
+                    </label>
+                    <button type="button" id="button__dark">Сменить тему</button>
+                </div>
+            </div>
+                        
+        </div>
+    </div>
 <!----------------------- Переделать ВСЁ ПО БЭМУ кроме кнопок, добавить дополнительные классы для позиционирования элемента, перенести все svg в отдельный файл, ввести все px em и rem, добавить адаптив для мобилки, добавить кнопку сменить фон --------------------------->
         
     <script type="module" src="scripts/script_messenger.js"></script>
