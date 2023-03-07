@@ -126,11 +126,6 @@ boxColor.oninput = function() {
 
 // изменение размера с помощью ползунка
 
-function test() {
-  
-};
-
-
 input_rangeW.oninput = function() {
     root.style.setProperty('--main-width', this.value + 'px');
     radStyle.width = (this.value + 'px');

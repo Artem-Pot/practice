@@ -5,13 +5,15 @@
 }
 
 :root {
+
     --bg-color: #fff;
     --bg-colorInput: #F5F5F5;
-    --bg-colorMes: #fff;
+    --bg-colorMes: #84d2f7;
+    --text-colorMes: #000;
     --text-color: #011627;
     --text-colorUser:#707991;
     --text-colorHover: #F5F5F5;
-    --text-color-online: #06adfa;
+    --text-color-online: #3bbb00;
     --border-color:#D9DCE0;
     --text-color-unread:#011627;
     --bg-images-back: url(../img/messenger/background-5.jpg);
@@ -350,6 +352,7 @@ main {
     gap: 4px;
     margin-bottom: 16px;
     margin-left: 40px;
+    color: var(--text-colorMes);
 }
 
 .main__mess-user {
@@ -365,6 +368,7 @@ main {
     gap: 4px;
     margin-bottom: 16px;
     margin-right: 40px;
+    color: var(--text-colorMes);
 }
 
 .main__mess-system {
@@ -379,12 +383,13 @@ main {
     flex-wrap: wrap;
     gap: 4px;
     margin-bottom: 16px;
+    color: var(--colorMes);
 }
 
 .main__text {
     display: flex;
     line-height: 20px;
-    color: var(--text-color);
+    color: var(--text-colorMes);
 }
 
 .main__time-box {
@@ -397,7 +402,7 @@ main {
 .main__time {
     font-size: 12px;
     line-height: 16px;
-    color: var(--text-color);
+    color: var(--text-colorMes);
 }
 
 .main__read {
@@ -430,6 +435,27 @@ main {
     gap: 16px;
     width: 100%;
 }
+
+.main__form-smile {
+    position: relative;
+}
+
+.main__wripper-smile {
+    width: 150px;
+    height: 100px;
+    background-color: #707991;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 29px;
+    display: none;
+}
+
+.smile {
+    width: 50px;
+    height: 50px;
+}
+
 
 .button_form {
     width: 24px;

@@ -30,16 +30,49 @@ function getRandomBotObj(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
 }
 
-// ------------------первое сообщение бота-----------------
+//------------функция включения оповещения о сообщении----------------------
+
+//ползунок отключения/включения звука сообщения от бота
+const checkboxSound = document.getElementById("profile__checkbox-sound"); // поиск чек бокса твечающий за отклчюение/включение звука
+checkboxSound.addEventListener('change', sound); // обрабочик события нажатия на чек бокс
+
+function sound() {
+    if (checkboxSound.checked) {
+        soundOn();
+      } else {
+        soundOff();
+      }
+}
+//функция включения включения звука уведомления
+function soundOn() {
+    const audio = new Audio();
+    audio.src = 'sound/incoming.mp3';
+    audio.autoplay = true;
+}
+//функция отключение звука уведомления
+function soundOff() {
+    const audio = new Audio();
+    audio.src = 'sound/incoming.mp3';
+    audio.pause();
+}
+// функция включение при запуске чата
+function soundOne() {
+    const audio = new Audio();
+    audio.src = 'sound/beginning.mp3';
+    audio.autoplay = true;
+}
+
+// ------------------первое информационное сообщение бота-----------------
 function textOneBot() { 
     const div = document.createElement('div');                                 // создание нового diva
     div.className = "main__mess-system";                                            // присвоение новому элементу класс message__bot
     Message.append(div); // добавить блок с сообщениеем - последним
+
       //--------время для сообщения----------
-      const d = new Date();
-      const h = `${d.getHours()}`.padStart(2, '0');
-      const m = `${d.getMinutes()}`.padStart(2, '0');
-      const displayDate = h + ":" + m;
+    const d = new Date();
+    const h = `${d.getHours()}`.padStart(2, '0');
+    const m = `${d.getMinutes()}`.padStart(2, '0');
+    const displayDate = h + ":" + m;
 
     // создание первого приветсвенного сообщения ботом
     div.innerHTML = `<span class="main__text">Привет, я чат-бот и я умею:<br>
@@ -50,6 +83,7 @@ function textOneBot() {
         <span class="main__time">${displayDate}</span>
         <div class="main__read main__read-no"></div>
     </div>`;     
+    soundOne();
 }
 
 setTimeout(() => { textOneBot(); }, 1000);   //вызов функции первого сообшения ботом через время после загрузки страницы
@@ -103,12 +137,12 @@ function textInput() {
 }
 
 // ---------------------сообщения бота-------------------------------------
-
 function textBot() {  
     const div = document.createElement('div'); // создание нового diva
     const userMessage = document.getElementById('main__input').value; // поиск текста в форме сообщения пользователя
     let letterСase = userMessage.trim().toLowerCase().replace(/[^а-яА-Яa-zA-Z ]/g, ""); // фильтр переводит сообщение в нижний регистр, исключает пробелы впередли и сзади, исключение всех символов кроме букв алфавита.
     const block = document.getElementById("placehere"); // прокрутка сообщения в блоке сообщений
+
       //--------время для сообщения----------
     const d = new Date();
     const h = `${d.getHours()}`.padStart(2, '0');
@@ -130,22 +164,23 @@ function textBot() {
             <div class="main__read main__read-no"></div>
         </div>`;
     }
-
+    sound();
     div.className = "main__mess"; // присвоение новому элементу класс main__mess
     Message.append(div); // добавить блок с сообщениеем - последним
     block.scrollTop = block.scrollHeight; // прокрутка блока до самого низа
     document.getElementById('main__input').value = ''; // очистка поля ввода от текста после отправки сообщения пользователем (работает не так как нужно т.к. когда она стояла в функции вывода сообщения пользователя она стила сообщение и я не мог взять от туда данные), не работает если просто указать переменную userMessage, поэтому пришлось искать элемент заново   
 }
 
-// -------------- Изменение светлой темы на тёмную.
-let submitDark = document.getElementById('button__dark'); // переменная - событие отправки, при нажати на кнопку
-submitDark.addEventListener('click', textBut); // обработчик события нажатии на кнопку
+// -------------- Изменение светлой темы на тёмную с помощью переключателя.
+const checkboxTheme = document.getElementById("profile__checkbox-theme");
+const root = document.querySelector(':root');
 
-function textBut() {
-    const root = document.querySelector(':root');
+checkboxTheme.addEventListener('change', function() {
+  if (this.checked) {
     root.style.setProperty('--bg-color', '#011627');
     root.style.setProperty('--bg-colorInput', '#504f4f');
     root.style.setProperty('--bg-colorMes', '#06adfa');
+    root.style.setProperty('--text-colorMes', '#000');
     root.style.setProperty('--text-color', '#fff');
     root.style.setProperty('--text-colorUser', '#fff');
     root.style.setProperty('--text-colorHover', '#66686d');
@@ -153,18 +188,48 @@ function textBut() {
     root.style.setProperty('--text-color-unread', 'red');
     root.style.setProperty('--border-color', '#fff');
     root.style.setProperty('--bg-images-back', 'url(../img/messenger/background.jpg)');
+  } else {
+    root.style.setProperty('--bg-color', '#fff');
+    root.style.setProperty('--bg-colorInput', '#F5F5F5');
+    root.style.setProperty('--bg-colorMes', '#84d2f7');
+    root.style.setProperty('--text-colorMes', '#000');
+    root.style.setProperty('--text-color', '#011627');
+    root.style.setProperty('--text-colorUser', '#707991');
+    root.style.setProperty('--text-colorHover', '#F5F5F5');
+    root.style.setProperty('--text-color-online', '#06adfa');
+    root.style.setProperty('--text-color-unread', '#011627');
+    root.style.setProperty('--border-color', '#D9DCE0');
+    root.style.setProperty('--bg-images-back', 'url(../img/messenger/background-5.jpg)');
+  }
+});
+
+//--------------- смайлы------------------
+
+// событие нажатия на кнопку отправить
+const smile = document.getElementById('button_smile'); // переменная - событие отправки, при нажати на кнопку
+smile.addEventListener('click', smileFuc); // обработчик события нажатии на кнопку
+
+function smileFuc() {
+    let sm = document.querySelector('.main__wripper-smile').style.display;
+    sm = 'block';
+    // if (sm === 'none') {
+    //     sm = 'block';
+    // }
+    
+    // else {
+    //     sm = 'none';
+    // }
+    // https://www.delftstack.com/ru/howto/javascript/javascript-hide-show-elements/
 }
 
-// добавить изменение темы на тумную + изображение фона
-// добавить чтобы изменялось с помощью чек бокса
-// добавить звуки
 // добавить смайлики и стикеты
+// добавить выпадающее меню с настройками
+// сделать адаптивный сайт для мобилок
 //ajax читать, чтобы сделать полноценный онлайн чат
 // добавить изменение галочки со временем
 // добавить ещё акаунтов пользователей в чате
 // реализовать функцию переключения между пользователя и начала чата с ними.
 // добавить для пользователей статус онлайнили нет в виде маленькой точки у аватара
-// поправить бордер border-right 1 px, у правой колонки, а то пришлось делать бордер для поля с собщением
 
 //добавить сценарий в виде ветвления.
 // добавить функцию самообучения бота - добавить команду !команда, котое будет вызывать алерт в который добавить фразу и ответ к ней. 
