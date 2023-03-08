@@ -55,6 +55,7 @@ function soundOff() {
     audio.src = 'sound/incoming.mp3';
     audio.pause();
 }
+
 // функция включение при запуске чата
 function soundOne() {
     const audio = new Audio();
@@ -83,7 +84,7 @@ function textOneBot() {
         <span class="main__time">${displayDate}</span>
         <div class="main__read main__read-no"></div>
     </div>`;     
-    soundOne();
+   // soundOne(); функция проигрывания мелоии при вкюченние чата
 }
 
 setTimeout(() => { textOneBot(); }, 1000);   //вызов функции первого сообшения ботом через время после загрузки страницы
@@ -94,10 +95,10 @@ function textInput() {
     const div = document.createElement('div'); // создание нового diva
     const block = document.getElementById("placehere"); // прокрутка сообщения в блоке сообщений
       //--------время для сообщения----------
-      const d = new Date();
-      const h = `${d.getHours()}`.padStart(2, '0');
-      const m = `${d.getMinutes()}`.padStart(2, '0');
-      var displayDate = h + ":" + m;
+    const d = new Date();
+    const h = `${d.getHours()}`.padStart(2, '0');
+    const m = `${d.getMinutes()}`.padStart(2, '0');
+    var displayDate = h + ":" + m;
   
     if (userMessage === '') {
         document.getElementById("main__input").focus(); // фокусирует элемиент ввода сообщения
@@ -205,31 +206,82 @@ checkboxTheme.addEventListener('change', function() {
 
 //--------------- смайлы------------------
 
-// событие нажатия на кнопку отправить
+// событие нажатия на кнопку смайлы
 const smile = document.getElementById('button_smile'); // переменная - событие отправки, при нажати на кнопку
 smile.addEventListener('click', smileFuc); // обработчик события нажатии на кнопку
 
-function smileFuc() {
-    let sm = document.querySelector('.main__wripper-smile').style.display;
-    sm = 'block';
-    // if (sm === 'none') {
-    //     sm = 'block';
-    // }
-    
-    // else {
-    //     sm = 'none';
-    // }
-    // https://www.delftstack.com/ru/howto/javascript/javascript-hide-show-elements/
-}
+// событие когда форма теряет фокус
+// smile.addEventListener('focusout', function (event) {
+//     document.querySelector('.main__wripper-smile').style.display = 'none';
+// });
 
-// добавить смайлики и стикеты
+//срабатые когда нажимаю на кнопку со смайлами - показывает доступные смайлы
+function smileFuc() {
+    let sm = document.querySelector('.main__wripper-smile').style;
+    if (sm.display === 'none') { // естиль сткрый, то показывает его
+        sm.display = 'block'; 
+    } 
+    else {
+        sm.display = 'none';
+    }
+}
+//смайлы
+const smile1 = document.getElementById('button_smile_1'); // переменная - событие отправки, при нажати на кнопку
+smile1.addEventListener('click', smile_1); // обработчик события нажатии на кнопку
+
+function smile_1() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😀';
+};
+
+const smile2 = document.getElementById('button_smile_2'); // переменная - событие отправки, при нажати на кнопку
+smile2.addEventListener('click', smile_2); // обработчик события нажатии на кнопку
+
+function smile_2() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😂';
+};
+
+const smile3 = document.getElementById('button_smile_3'); // переменная - событие отправки, при нажати на кнопку
+smile3.addEventListener('click', smile_3); // обработчик события нажатии на кнопку
+
+function smile_3() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😉';
+};
+
+const smile4 = document.getElementById('button_smile_4'); // переменная - событие отправки, при нажати на кнопку
+smile4.addEventListener('click', smile_4); // обработчик события нажатии на кнопку
+
+function smile_4() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😋';
+};
+
+const smile5 = document.getElementById('button_smile_5'); // переменная - событие отправки, при нажати на кнопку
+smile5.addEventListener('click', smile_5); // обработчик события нажатии на кнопку
+
+function smile_5() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '💩';
+};
+
+const smile6 = document.getElementById('button_smile_6'); // переменная - событие отправки, при нажати на кнопку
+smile6.addEventListener('click', smile_6); // обработчик события нажатии на кнопку
+
+function smile_6() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😳';
+};
+
+
+// стикеры выводит каждый наотдельной строке
+// смайлы сами не сворачивают, не получилось этого сделать при потере фокуса. и сократить код для смайлов
 // добавить выпадающее меню с настройками
-// сделать адаптивный сайт для мобилок
 //ajax читать, чтобы сделать полноценный онлайн чат
 // добавить изменение галочки со временем
 // добавить ещё акаунтов пользователей в чате
 // реализовать функцию переключения между пользователя и начала чата с ними.
-// добавить для пользователей статус онлайнили нет в виде маленькой точки у аватара
 
 //добавить сценарий в виде ветвления.
 // добавить функцию самообучения бота - добавить команду !команда, котое будет вызывать алерт в который добавить фразу и ответ к ней. 

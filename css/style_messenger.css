@@ -134,13 +134,43 @@ img {
 }
 
 .contacts__ico {
-    background: url(../img/messenger/contacts__ico/contacts__ico-bender.jpg) center center no-repeat;
     width: 48px;
     height: 48px;
     border-radius: 100px;
-    background-size:cover;
-
+    position: relative;
 }
+
+.contacts__ico_1 {
+    background: url(../img/messenger/contacts__ico/contacts__ico-bender.jpg) center center no-repeat;
+    background-size:cover;
+}
+
+.contacts__ico_2 {
+    background: url(../img/messenger/contacts__ico/ico2.jpg) center center no-repeat;
+    background-size:cover;
+}
+
+.contacts__ico_3 {
+    background: url(../img/messenger/contacts__ico/ico3.jpg) center center no-repeat;
+    background-size:cover;
+}
+
+
+.contacts__status {
+    position: absolute;
+    background-color: #3bbb00;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    top: 42px;
+    left: 30px;
+    display: none;
+}
+
+.contacts__status-online {
+    display: block;
+}
+
 .contacts__box {
     width: 268px;
     height: 42px;
@@ -159,12 +189,13 @@ img {
 }
 
 .contacts__nick {
-
+    
 }
 
 .contacts__span-nick {
     font-weight: 600;
     line-height: 20px;
+    
     color: var(--text-color);
 }
 
@@ -193,7 +224,8 @@ img {
     width: 100%;
     max-width: 245px;
     height: 18px;
-    overflow: visible; 
+    overflow: visible;
+    
 }
 
 .contacts__span-messages {
@@ -369,13 +401,14 @@ main {
     margin-bottom: 16px;
     margin-right: 40px;
     color: var(--text-colorMes);
+    
 }
 
 .main__mess-system {
     padding: 4px 12px;
-    max-width: 100%;
+    max-width: 90%;
     width: auto;
-    background-color: #bdc4bd;
+    background-color: #e2e5e2;
     border-radius: 12px;
     display: flex;   
     align-self:center;
@@ -384,6 +417,7 @@ main {
     gap: 4px;
     margin-bottom: 16px;
     color: var(--colorMes);
+    overflow-wrap: break-word;
 }
 
 .main__text {
@@ -441,21 +475,20 @@ main {
 }
 
 .main__wripper-smile {
-    width: 150px;
-    height: 100px;
-    background-color: #707991;
+    width: 159px;
+    height: 105px;
     display: flex;
-    flex-wrap: wrap;
     position: absolute;
-    bottom: 29px;
+    bottom: 25px;
     display: none;
+    background-color: #fff;
 }
 
-.smile {
+.button_smile {
     width: 50px;
     height: 50px;
+    font-size: 25px;
 }
-
 
 .button_form {
     width: 24px;
@@ -617,3 +650,76 @@ main {
 	box-shadow: inset 0px 0px 4px #ff5623;
 }
 /*-----конец Чек бокс переключатели------*/
+
+@media screen and (max-width: 1290px) {
+    .profile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .side-panel {
+        width: 250px;
+    }
+    .contacts__nick {
+        font-size: 14px;
+    }
+    .contacts__span-messages {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .contacts__ico {
+        margin-right: 5px;
+        width: 40px;
+        height: 40px;
+    }
+    #settings__input {
+        width: 100px;
+    }
+
+    .contacts__messages {
+        max-width: 160px;
+    }
+
+    .contacts__status-online {
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        top:35px;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .settings__search {
+        display: none;
+    }
+
+    .side-panel {
+        width: 70px;
+    }
+    .contacts__box {
+        display: none;
+    }
+    
+    .contacts__ico {
+        margin-right: 5px;
+        width: 40px;
+        height: 40px;
+    }
+    #settings__input {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main__text {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .main__time {
+        font-size: 10px;
+        line-height: 13px;
+    }
+}
