@@ -196,7 +196,7 @@ checkboxTheme.addEventListener('change', function() {
     root.style.setProperty('--text-color', '#011627');
     root.style.setProperty('--text-colorUser', '#707991');
     root.style.setProperty('--text-colorHover', '#F5F5F5');
-    root.style.setProperty('--text-color-online', '#06adfa');
+    root.style.setProperty('--text-color-online', '#3bbb00');
     root.style.setProperty('--text-color-unread', '#011627');
     root.style.setProperty('--border-color', '#D9DCE0');
     root.style.setProperty('--bg-images-back', 'url(../img/messenger/background-5.jpg)');
