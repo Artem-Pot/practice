@@ -84,7 +84,7 @@ function textOneBot() {
         <span class="main__time">${displayDate}</span>
         <div class="main__read main__read-no"></div>
     </div>`;     
-   // soundOne(); функция проигрывания мелоии при вкюченние чата
+    soundOne(); //функция проигрывания мелоии при вкюченние чата
 }
 
 setTimeout(() => { textOneBot(); }, 1000);   //вызов функции первого сообшения ботом через время после загрузки страницы
@@ -207,23 +207,27 @@ checkboxTheme.addEventListener('change', function() {
 const settings = document.getElementById('button__settings'); // переменная - событие отправки, при нажати на кнопку
 settings.addEventListener('click', butSettings); // обработчик события нажатии на кнопку
 
-function butSettings() {
+// событие когда форма теряет фокус
+// settings.addEventListener('focusout', function (event) {
+//     document.querySelector('.profile__settings').style.display = 'none';
+// });
+
+function butSettings() { 
     let sm = document.querySelector('.profile__settings').style;
-    if (sm.display === 'none') { // если скрытый, то показывает его
-        sm.display = 'block'; 
+    if (sm.display === 'block') { // если не скрытый, то скрывает его
+        sm.display = 'none'; 
     } 
     else {
-        sm.display = 'none';
+        sm.display = 'block';
     }
 }
 
 //--------------- смайлы------------------
-
 // событие нажатия на кнопку смайлы
 const smile = document.getElementById('button_smile'); // переменная - событие отправки, при нажати на кнопку
 smile.addEventListener('click', smileFuc); // обработчик события нажатии на кнопку
 
-// событие когда форма теряет фокус
+// // событие когда форма теряет фокус
 // smile.addEventListener('focusout', function (event) {
 //     document.querySelector('.main__wripper-smile').style.display = 'none';
 // });
@@ -231,11 +235,11 @@ smile.addEventListener('click', smileFuc); // обработчик событи�
 //срабатые когда нажимаю на кнопку со смайлами - показывает доступные смайлы
 function smileFuc() {
     let sm = document.querySelector('.main__wripper-smile').style;
-    if (sm.display === 'none') { // если скрытый, то показывает его
-        sm.display = 'block'; 
+    if (sm.display === 'block') { // если не скрытый, то скрывает его
+        sm.display = 'none'; 
     } 
     else {
-        sm.display = 'none';
+        sm.display = 'block';
     }
 }
 
@@ -287,6 +291,103 @@ function smile_6() {
     userMessage.value = userMessage.value + '😳';
 };
 
+const smile7 = document.getElementById('button_smile_7'); // переменная - событие отправки, при нажати на кнопку
+smile7.addEventListener('click', smile_7); // обработчик события нажатии на кнопку
+
+function smile_7() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '🙃';
+};
+
+const smile8 = document.getElementById('button_smile_8'); // переменная - событие отправки, при нажати на кнопку
+smile8.addEventListener('click', smile_8); // обработчик события нажатии на кнопку
+
+function smile_8() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😉';
+};
+
+const smile9 = document.getElementById('button_smile_9'); // переменная - событие отправки, при нажати на кнопку
+smile9.addEventListener('click', smile_9); // обработчик события нажатии на кнопку
+
+function smile_9() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😘';
+};
+
+const smile10 = document.getElementById('button_smile_10'); // переменная - событие отправки, при нажати на кнопку
+smile10.addEventListener('click', smile_10); // обработчик события нажатии на кнопку
+
+function smile_10() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😪';
+};
+
+const smile11 = document.getElementById('button_smile_11'); // переменная - событие отправки, при нажати на кнопку
+smile11.addEventListener('click', smile_11); // обработчик события нажатии на кнопку
+
+function smile_11() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😴';
+};
+
+const smile12 = document.getElementById('button_smile_12'); // переменная - событие отправки, при нажати на кнопку
+smile12.addEventListener('click', smile_12); // обработчик события нажатии на кнопку
+
+function smile_12() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '🤢';
+};
+
+const smile13 = document.getElementById('button_smile_13'); // переменная - событие отправки, при нажати на кнопку
+smile13.addEventListener('click', smile_13); // обработчик события нажатии на кнопку
+
+function smile_13() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '🥳';
+};
+
+const smile14 = document.getElementById('button_smile_14'); // переменная - событие отправки, при нажати на кнопку
+smile14.addEventListener('click', smile_14); // обработчик события нажатии на кнопку
+
+function smile_14() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😎';
+};
+
+const smile15 = document.getElementById('button_smile_15'); // переменная - событие отправки, при нажати на кнопку
+smile15.addEventListener('click', smile_15); // обработчик события нажатии на кнопку
+
+function smile_15() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '😡';
+};
+
+const smile16 = document.getElementById('button_smile_16'); // переменная - событие отправки, при нажати на кнопку
+smile16.addEventListener('click', smile_16); // обработчик события нажатии на кнопку
+
+function smile_16() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '💋';
+};
+
+const smile17 = document.getElementById('button_smile_17'); // переменная - событие отправки, при нажати на кнопку
+smile17.addEventListener('click', smile_17); // обработчик события нажатии на кнопку
+
+function smile_17() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '💣';
+};
+
+const smile18 = document.getElementById('button_smile_18'); // переменная - событие отправки, при нажати на кнопку
+smile18.addEventListener('click', smile_18); // обработчик события нажатии на кнопку
+
+function smile_18() {
+    let userMessage = document.getElementById('main__input');
+    userMessage.value = userMessage.value + '👌';
+};
+
+// проверить нажимается на мобильке кнопка с первого раза или снвоа изменять https://www.cyberforum.ru/javascript/thread2315503.html
 // смайлы сами не сворачивают и меню, не получилось этого сделать при потере фокуса. 
 //и сократить код для смайлов + добавить больше
 //ajax читать, чтобы сделать полноценный онлайн чат
