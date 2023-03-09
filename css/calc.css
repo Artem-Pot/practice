@@ -26,9 +26,7 @@ body {
 .calc__form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-
     gap: 10px;
-    
 }
 
 .intut__number {
@@ -45,12 +43,8 @@ body {
     border: 1px solid gray;
 }
 
-.button_blue {
-
-}
-
-.button_yellow {
-
+.button:hover {
+    fill-opacity: 0.5;
 }
 
 .button_gray {

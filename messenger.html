@@ -26,7 +26,7 @@
 
                     <div class="settings__search">
                         <form class="settings__form">
-                            <input id="settings__input" placeholder="Поиск">
+                            <input id="settings__input" placeholder="Поиск контакта">
                             <button class="button button_menu button_menu-search" id="settings__button_search" type="button">
                                 <svg class="arrow-svg" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7.99997 0.5C9.39795 0.499944 10.7681 0.890614 11.9559 1.62792C13.1436 2.36523 14.1016 3.41983 14.7218 4.6727C15.342 5.92558 15.5997 7.32686 15.4658 8.71841C15.3319 10.11 14.8117 11.4364 13.964 12.548L18.707 17.293C18.8863 17.473 18.9904 17.7144 18.9982 17.9684C19.006 18.2223 18.9168 18.4697 18.7487 18.6603C18.5807 18.8508 18.3464 18.9703 18.0935 18.9944C17.8406 19.0185 17.588 18.9454 17.387 18.79L17.293 18.707L12.548 13.964C11.601 14.6861 10.4956 15.1723 9.32341 15.3824C8.15119 15.5925 6.9458 15.5204 5.80697 15.1721C4.66814 14.8238 3.62862 14.2094 2.77443 13.3795C1.92023 12.5497 1.27592 11.5285 0.894799 10.4002C0.513683 9.27192 0.406722 8.06912 0.582766 6.89131C0.75881 5.7135 1.2128 4.59454 1.90717 3.62703C2.60153 2.65951 3.51631 1.87126 4.57581 1.32749C5.63532 0.783715 6.80908 0.500063 7.99997 0.5ZM7.99997 2.5C6.54128 2.5 5.14233 3.07946 4.11088 4.11091C3.07943 5.14236 2.49997 6.54131 2.49997 8C2.49997 9.45869 3.07943 10.8576 4.11088 11.8891C5.14233 12.9205 6.54128 13.5 7.99997 13.5C9.45866 13.5 10.8576 12.9205 11.8891 11.8891C12.9205 10.8576 13.5 9.45869 13.5 8C13.5 6.54131 12.9205 5.14236 11.8891 4.11091C10.8576 3.07946 9.45866 2.5 7.99997 2.5Z" fill="#707991"/>
@@ -47,7 +47,7 @@
                                 <div class="contacts__time"><span class="contacts__span-time">18:30</span></div>
                             </div>
                             <div class="contacts__mess">
-                                <div class="contacts__messages"><p class="contacts__span-messages">Первоое сообщение бота...</p></div>
+                                <div class="contacts__messages"><p class="contacts__span-messages">Я люблю вас, мешки с мясом!</p></div>
                                 <div class="contacts__unread"><span class="contacts__span-unread">1</span></div>                       
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                 <div class="contacts__time"><span class="contacts__span-time">Вчера</span></div>
                             </div>
                             <div class="contacts__mess">
-                                <div class="contacts__messages"><p class="contacts__span-messages">Первоое сообщение бота...</p></div>
+                                <div class="contacts__messages"><p class="contacts__span-messages">Ну уж нет 😀</p></div>
                                 <div class="contacts__unread"><span class="contacts__span-unread">5</span></div>                       
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 <div class="contacts__time"><span class="contacts__span-time">3 дн.</span></div>
                             </div>
                             <div class="contacts__mess">
-                                <div class="contacts__messages"><p class="contacts__span-messages">Первоое сообщение бота...</p></div>
+                                <div class="contacts__messages"><p class="contacts__span-messages">У меня дел полно, давай завтра.</p></div>
                                 <div class="contacts__unread"><span class="contacts__span-unread">10</span></div>
                             </div>
                         </div>
@@ -100,23 +100,45 @@
                 </div>
 
                 <div class="main__box-settings">
-                    <button class="button button_header" id="button__search" type="button">
+                    <button class="button button_header" id="button__search" type="button" title = 'Поиск сообщений'>
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 0.5C9.39798 0.499944 10.7681 0.890614 11.9559 1.62792C13.1436 2.36523 14.1016 3.41983 14.7218 4.6727C15.342 5.92558 15.5997 7.32686 15.4658 8.71841C15.3319 10.11 14.8117 11.4364 13.964 12.548L18.707 17.293C18.8864 17.473 18.9905 17.7144 18.9982 17.9684C19.006 18.2223 18.9168 18.4697 18.7488 18.6603C18.5807 18.8508 18.3464 18.9703 18.0935 18.9944C17.8406 19.0185 17.588 18.9454 17.387 18.79L17.293 18.707L12.548 13.964C11.601 14.6861 10.4957 15.1723 9.32344 15.3824C8.15123 15.5925 6.94583 15.5204 5.807 15.1721C4.66817 14.8238 3.62865 14.2094 2.77446 13.3795C1.92026 12.5497 1.27595 11.5285 0.89483 10.4002C0.513713 9.27192 0.406752 8.06912 0.582797 6.89131C0.758841 5.7135 1.21283 4.59454 1.9072 3.62703C2.60156 2.65951 3.51634 1.87126 4.57585 1.32749C5.63535 0.783715 6.80911 0.500063 8 0.5V0.5ZM8 2.5C6.54131 2.5 5.14236 3.07946 4.11091 4.11091C3.07946 5.14236 2.5 6.54131 2.5 8C2.5 9.45869 3.07946 10.8576 4.11091 11.8891C5.14236 12.9205 6.54131 13.5 8 13.5C9.45869 13.5 10.8576 12.9205 11.8891 11.8891C12.9205 10.8576 13.5 9.45869 13.5 8C13.5 6.54131 12.9205 5.14236 11.8891 4.11091C10.8576 3.07946 9.45869 2.5 8 2.5Z" fill="#707991"/>
                             </svg>
                     </button>
 
-                    <button class="button button_header" id="button__call" type="button">
+                    <button class="button button_header" id="button__call" type="button" title = 'Онлайн звонок'>
                         <svg width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.77201 0.438993L3.84801 0.0949929C4.85801 -0.227007 5.93501 0.293993 6.36801 1.31199L7.22701 3.33999C7.60101 4.22299 7.39401 5.26199 6.71301 5.90799L4.81901 7.70599C4.93501 8.78199 5.29701 9.84099 5.90301 10.883C6.47879 11.8912 7.25104 12.7736 8.17401 13.478L10.449 12.718C11.312 12.431 12.251 12.762 12.779 13.539L14.012 15.349C14.627 16.253 14.517 17.499 13.754 18.265L12.936 19.086C12.122 19.903 10.959 20.2 9.88401 19.864C7.34501 19.072 5.01101 16.721 2.88101 12.811C0.748009 8.89499 -0.00499088 5.57099 0.623009 2.84299C0.887009 1.69499 1.70401 0.779993 2.77201 0.438993Z" fill="#707991"/>
                             </svg>
                     </button>
 
-                    <button class="button button_header" id="button__settings" type="button">
+                    <button class="button button_header" id="button__settings" type="button" title = 'Настройки внешнего вида и звуков'>
                         <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 4C1.46957 4 0.96086 3.78929 0.585787 3.41421C0.210714 3.03914 0 2.53043 0 2C0 1.46957 0.210714 0.960859 0.585787 0.585786C0.96086 0.210714 1.46957 0 2 0C2.53043 0 3.03914 0.210714 3.41421 0.585786C3.78929 0.960859 4 1.46957 4 2C4 2.53043 3.78929 3.03914 3.41421 3.41421C3.03914 3.78929 2.53043 4 2 4ZM2 10C1.46957 10 0.96086 9.78929 0.585787 9.41421C0.210714 9.03914 0 8.53043 0 8C0 7.46957 0.210714 6.96086 0.585787 6.58579C0.96086 6.21071 1.46957 6 2 6C2.53043 6 3.03914 6.21071 3.41421 6.58579C3.78929 6.96086 4 7.46957 4 8C4 8.53043 3.78929 9.03914 3.41421 9.41421C3.03914 9.78929 2.53043 10 2 10ZM0 14C0 14.5304 0.210714 15.0391 0.585787 15.4142C0.96086 15.7893 1.46957 16 2 16C2.53043 16 3.03914 15.7893 3.41421 15.4142C3.78929 15.0391 4 14.5304 4 14C4 13.4696 3.78929 12.9609 3.41421 12.5858C3.03914 12.2107 2.53043 12 2 12C1.46957 12 0.96086 12.2107 0.585787 12.5858C0.210714 12.9609 0 13.4696 0 14Z" fill="#707991"/>
                             </svg>
                     </button>
+
+                    <div class="profile__settings">
+                        <div class="profile__box-sett">
+                            <div class="profile__notifications">
+                                <span class="profile__text">Вкл/откл звук уведомления</span>
+                                <label class="checkbox-ios">
+                                    <input type="checkbox" id="profile__checkbox-sound" checked>
+                                    <span class="checkbox-ios-switch"></span>
+                                </label>
+                            </div>
+            
+                            <div class="profile__notifications">
+                                <span class="profile__text">Светлая/тёмная тема</span>
+                                <label class="checkbox-ios">
+                                    <input type="checkbox" id="profile__checkbox-theme">
+                                    <span class="checkbox-ios-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                                    
+                    </div>
+
                 </div>
             </div>
 
@@ -148,7 +170,7 @@
                             <div class="main__form-wrapper">
                                 <div class="main__form-smile">
                                     <div class="main__wripper-smile">
-                                        <button class='button button_smile' id="button_smile_1" type="button" >😀</button>
+                                        <button class='button button_smile' id="button_smile_1" type="button">😀</button>
                                         <button class='button button_smile' id="button_smile_2" type="button">😂</button>
                                         <button class='button button_smile' id="button_smile_3" type="button">😉</button>
                                         <button class='button button_smile' id="button_smile_4" type="button">😋</button>
@@ -184,35 +206,23 @@
                 <div class="profile__time"><span class="main__user-status">Оnline</span></div>
             </div>
         </div>
-    
-        <div class="profile__settings">
-            <div class="profile__box-sett">
-                
-                <div class="profile__notifications">
-                    <span class="profile__text">вкл/откл уведомление</span>
-                    <label class="checkbox-ios">
-                        <input type="checkbox" id="profile__checkbox">
-                        <span class="checkbox-ios-switch"></span>
-                    </label>
-                </div>
 
-                <div class="profile__notifications">
-                    <span class="profile__text">вкл/откл звук уведомления</span>
-                    <label class="checkbox-ios">
-                        <input type="checkbox" id="profile__checkbox-sound" checked>
-                        <span class="checkbox-ios-switch"></span>
-                    </label>
-                </div>
-
-                <div class="profile__notifications">
-                    <span class="profile__text">Светлая/тёмная тема</span>
-                    <label class="checkbox-ios">
-                        <input type="checkbox" id="profile__checkbox-theme">
-                        <span class="checkbox-ios-switch"></span>
-                    </label>
-                </div>
+        <div class="profile__box">
+            <div class="profile__wrapper_box">
+                <span class="profile__box-text">Файлы</span>
             </div>
-                        
+        </div>
+
+        <div class="profile__box">
+            <div class="profile__wrapper_box">
+                <span class="profile__box-text">Добавить в группы</span>
+            </div>
+        </div>
+
+        <div class="profile__box">
+            <div class="profile__wrapper_box">
+                <span class="profile__box-text">Общие группы</span>
+            </div>
         </div>
     </div>
 <!----------------------- Переделать ВСЁ ПО БЭМУ кроме кнопок, добавить дополнительные классы для позиционирования элемента, перенести все svg в отдельный файл, ввести все px em и rem, добавить адаптив для мобилки, добавить кнопку сменить фон --------------------------->
