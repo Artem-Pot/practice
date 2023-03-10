@@ -5,7 +5,6 @@
 }
 
 :root {
-
     --bg-color: #fff;
     --bg-colorInput: #F5F5F5;
     --bg-colorMes: #84d2f7;
@@ -27,8 +26,6 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
 }
 
 img {
