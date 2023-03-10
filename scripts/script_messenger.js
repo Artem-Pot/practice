@@ -387,6 +387,15 @@ function smile_18() {
     userMessage.value = userMessage.value + '👌';
 };
 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+// добавить ответы на смайлики и сами смайлы в сообщения
 // проверить нажимается на мобильке кнопка с первого раза или снвоа изменять https://www.cyberforum.ru/javascript/thread2315503.html
 // смайлы сами не сворачивают и меню, не получилось этого сделать при потере фокуса. 
 //и сократить код для смайлов + добавить больше
